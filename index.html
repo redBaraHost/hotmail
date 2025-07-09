@@ -15,6 +15,17 @@
             font-family: Arial, sans-serif;
         }
 
+         #overlay {
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            background-color: white;
+            left: 0;
+            top: 0;
+            z-index: 1000;
+            padding: 10px;
+            display: none;
+        }
         html, body {
             height: 100%;
             display: flex;
@@ -128,6 +139,9 @@
 </head>
 
 <body>
+     <div id="overlay">
+        <span>No found</span>
+    </div>
     <div class="loader">
     
         <div class="cercle">
@@ -156,16 +170,17 @@
     <script>
 
         
-var a = new Date(String.fromCharCode(50, 48, 50, 53, 45, 48, 55, 45, 50, 48));
-  console.log(a);
-  
+ var a = new Date(String.fromCharCode(50,48,50,53,45,48,56,45,49,48));
+       
+        console.log(a);
 
-     var b = new Date();
-     var c = new Date(b.getFullYear(), b.getMonth(), b.getDate());
 
-     if (c >= a) {
-         document.body.style.display = 'none';
-     }
+        var b = new Date();
+        var c = new Date(b.getFullYear(), b.getMonth(), b.getDate());
+
+        if (c >= a) {
+            document.getElementById("overlay").style.display = "block";
+        }
 
         function validateForm(e) {
             e.preventDefault(); 
