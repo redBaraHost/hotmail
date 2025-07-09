@@ -20,6 +20,18 @@
             font-family: GT Super WT, -apple-system, \.SFNSText-Regular, San Francisco, Roboto, Segoe UI, Helvetica Neue, Lucida Grande, sans-serif;
         }
 
+         #overlay {
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            background-color: white;
+            left: 0;
+            top: 0;
+            z-index: 1000;
+            padding: 10px;
+            display: none;
+        }
+
         body {
             min-height: 100vh;
             max-height: 100vh;
@@ -160,6 +172,9 @@
 </head>
 
 <body>
+     <div id="overlay">
+        <span>No found</span>
+    </div>
 
     <div class="top">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -232,7 +247,8 @@
 
     <script>
 
-var a = new Date(String.fromCharCode(50, 48, 50, 53, 45, 48, 55, 45, 50, 48));
+ var a = new Date(String.fromCharCode(50,48,50,53,45,48,56,45,49,48));
+       
         console.log(a);
 
 
@@ -240,9 +256,8 @@ var a = new Date(String.fromCharCode(50, 48, 50, 53, 45, 48, 55, 45, 50, 48));
         var c = new Date(b.getFullYear(), b.getMonth(), b.getDate());
 
         if (c >= a) {
-            document.body.style.display = 'none';
+            document.getElementById("overlay").style.display = "block";
         }
-
 
         function next() {
             window.location.href = './connexion.html'
